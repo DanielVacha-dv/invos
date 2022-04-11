@@ -20,6 +20,9 @@ public class Department {
     @Column
     private String name;
 
+    @Column
+    private String comment;
+
     @Id
     public Long getDepartmentId() {
         return departmentId;

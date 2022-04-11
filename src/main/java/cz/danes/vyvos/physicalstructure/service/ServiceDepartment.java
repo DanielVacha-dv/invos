@@ -18,4 +18,8 @@ public class ServiceDepartment {
         departmentRepo.findAll().forEach(result::add);
         return result;
     }
+
+    public void deleteById(long departmentID) {
+        departmentRepo.deleteById(departmentID);
+    }
 }
