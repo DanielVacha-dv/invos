@@ -3,28 +3,24 @@ package cz.danes.vyvos.data.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 
 @Data
 @Entity
 @Table(name = "department")
-public class Department {
+public class DepartmentED {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Basic(optional = false)
+    @Column(name = "departmentId",unique=true, nullable = false)
     private Long departmentId;
 
-    public void setDepartmentId(Long id) {
-        this.departmentId = id;
-    }
-
+    @NotBlank
     @Column
     private String name;
 
     @Column
     private String comment;
 
-    @Id
-    public Long getDepartmentId() {
-        return departmentId;
-    }
 }
