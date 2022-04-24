@@ -47,4 +47,19 @@ public class ControllerDepartment {
         return  ResponseEntity.ok()
                 .header("Custom-Header", "").body("");
     }
+
+    @PutMapping("/update")
+    public ResponseEntity<String> updateDepartment(@Valid DepartmentED department) {
+        HttpHeaders headers = new HttpHeaders();
+        if  (department!=null && department.getDepartmentId()!=null && department.getDepartmentId()>=0) {
+            departmentService.update(department);
+            headers.add("Access-Control-Allow-Credentials", "true");
+            return  ResponseEntity.ok()
+                    .header("Custom-Header", "").body("");
+        }  else {
+            headers.add("Access-Control-Allow-Credentials", "true");
+            return  ResponseEntity.status(404)
+                    .header("Custom-Header", "").body("");
+        }
+    }
 }

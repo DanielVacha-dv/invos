@@ -26,4 +26,8 @@ public class ServiceDepartment {
     public void add(DepartmentED department) {
         departmentRepo.save(department);
     }
+    
+    public void update(DepartmentED department) {
+        departmentRepo.save(department);
+    }
 }
