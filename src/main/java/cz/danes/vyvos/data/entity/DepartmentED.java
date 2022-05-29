@@ -10,6 +10,7 @@ import javax.validation.constraints.NotBlank;
 @Table(name = "department")
 public class DepartmentED {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)

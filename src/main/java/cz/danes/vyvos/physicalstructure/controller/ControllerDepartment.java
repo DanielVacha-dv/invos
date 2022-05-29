@@ -16,8 +16,6 @@ import java.util.List;
 @RequestMapping("/v1/department")
 public class ControllerDepartment {
 
-    final String SELECT_BY_ID = "select * from department ";
-
     @Autowired
     private ServiceDepartment departmentService;
 
@@ -41,7 +39,6 @@ public class ControllerDepartment {
     @PostMapping("/add")
     public ResponseEntity<String> addDepartment(@Valid DepartmentED department) {
         HttpHeaders headers = new HttpHeaders();
-
         departmentService.add(department);
         headers.add("Access-Control-Allow-Credentials", "true");
         return  ResponseEntity.ok()
